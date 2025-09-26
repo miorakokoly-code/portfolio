@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script src="script.js"></script>
+  <script>
+    // Modern image animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const imgs = document.querySelectorAll('img.animate-img');
+      const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('img-animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      imgs.forEach(img => observer.observe(img));
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ajoute ce script dans ton HTML -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<div id="particles-js"></div>
+
+  
+
+</head>
+<body>
+
+    <div class="link" id="main-nav">
+       <a href="#intro">Introduction</a>
+        <a href="#parc">Parcours</a>
+        <a href="#compt">Compétences</a>
+        <a href="#projet">Projets</a>
+        <a href="#reflex">Réflexions</a>
+        <a href="#docu">CV+Contact</a>
+         <a href="#send">SendMessage</a>
+    </div>
+
+    <button id="show-nav-btn" class="show-nav-btn" style="display:none;" onclick="showNav()" aria-label="Retour au menu">
+      &#9776; Menu
+    </button>
+
+    <script>
+      // Use event delegation for nav links
+      var mainNav = document.getElementById('main-nav');
+      var showNavBtn = document.getElementById('show-nav-btn');
+
+      mainNav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          mainNav.classList.add('nav-hidden');
+          showNavBtn.classList.add('nav-btn-visible');
+        }
+      });
+
+
+      function showNav() {
+        mainNav.classList.remove('nav-hidden');
+        showNavBtn.classList.remove('nav-btn-visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Also handle browser navigation (back/forward)
+      window.addEventListener('hashchange', function() {
+        if (!mainNav.classList.contains('nav-hidden')) {
+          mainNav.classList.add('nav-hidden');
+          showNavBtn.classList.add('nav-btn-visible');
+        }
+      });
+    </script>
+
+    <div class="profile-container simple-profile">
+  <img src="WhatsApp Image 2025-09-25 à 10.28.56_ed0b9641.jpg" alt="Miora" class="profile-pic simple-pic animate-img">
+  <h1 class="profile-name simple-name">Miora Tatiana</h1>
+  <div class="profile-title simple-title">Étudiante en Informatique</div>
+    </div>
+
+    
+<h2 id="intro">Introduction</h2>
+    <h3>Biographie</h3>
+    <p>Je me nomme HANTANIRINA Miora Tatiana , étudiante de niveau L1 au sein de l'établissement de l'ENI (Ecole Nationale d'Informatique) à Fianarantsoa , suivant la mention Informatique , parcours Professionnel. Je suis née à Toamasina le 02 juillet 2007 , actuellement j'habite dans la ville de Fianarantsoa en raison de mes études.</p>
+
+    <h3>Objectifs d'études</h3>
+    <p>
+        J'ai plusieurs objectifs notamment , je vise d'abord à terminer mes études supérieures jusqu'au master puis me former au maximum pendant mes années d'étudiante afin d'aprofondir mes connaissances et avoir une capacité cognitive idéale pour m'adapter facilement à l'évolution continue des outils , des matériaux ainsi que le savoir-faire en informatique. De plus , je souhaite pratiquer ma passion et user de mes capacités dans le monde professionnel pour contribuer au développement de la societé.
+    </p>
+
+    <h3>Domaine de spécialisation</h3>
+    <p>
+        J'ai un intérêt pour l'algorithme et les langages de programmations comme le langage C , C++ , C# , JavaScript et Python d'où je m'intéresse plus à la construction des sites webs . Deuxièmement, j'ai des connaissances à la création des bases de données et aussi à l'usage des commandes SQL ainsi qu'à la mise en place d'une interface avec Qt creator. Je suis capable de réaliser une maintenance de système d'exploitation via TeamViewer  et les commandes PsExec à distance .
+
+    </p>
+
+<div class="skill">
+  <p>JavaScript</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="50%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>CSS</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="60%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>C</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="80%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <p>C++</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="60%"></div>
+  </div>
+</div>
+
+ <div class="skill">
+  <p>C#</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="60%"></div>
+  </div>
+</div>
+<div class="skill">
+  <p>Python</p>
+  <div class="progress-bar">
+    <div class="progress" style="width: 0%" data-value="40%"></div>
+  </div>
+</div>
+
+
+    
+<h2 id="parc">Parcours académique</h2>
+      <h3>Etablissement fréquentés</h3>
+    <p>
+        A la primaire j'ai étudié dans un établissement privé nommé Papoussia et j'ai migré dans un établissement privé catholique pour le collège et le lycée nommé Saint Joseph De Cluny , j'ai réalisé ces parcours dans la ville de Toamasina.
+    </p>
+
+    <h3> Mes diplômes obtenus</h3>
+    <p>
+        J'ai obtenu mon CEPE en 2017 , mon BEPC en 2021 et mon Bac , série D , avec mention Bien en 2024 .
+    </p>
+
+   
+<h2 id="compt">Compétences</h2>
+     <h3>Techniques</h3>
+    <p>
+      J'ai travaillé pour terminer plusieurs de mes projets avec les logiciels et outils suivants : Visual Studio Code pour bâtir des sites webs , Code Blocks pour améliorer la connaissance en langage C, C++ et une première introduction de stockage des données par les fichiers , GNS3 pour la simulation des topologies réseaux en usant des équipements d'interconnexion. Qt pour bâtir l'interface des applications en utilisant les classes et en définissant les méthodes de même avec Visual Studio , Open Scad pour la simulation des matériels , XAMPP pour aider à obtenir les services de MySql et Apache dans la construction des bases de données.
+
+    </p>
+
+    <h3>Transversales</h3>
+    
+    <h4>Travail d'équipe</h4>
+    <p>
+    Je peux communiquer avec mes collègues mais aussi avec les personnes en dehors de mon domaine. Dans la plupart de mes projets de cette année ,j'ai travaillé en équipe notamment durant le projet JS de mon établissement actuelle , celui de la création de fonction excel en VBA et la mise en place du Modèle Conceptuelle de Données.
+    </p>
+    
+    <h4>Autonomie</h4>
+    <p>
+        j'ai réalisé plusieurs projets individuellement aussi comme : un panneau publicitaire , une résolution d'une équation à 3 inconnus par méthode de Cramer, une calculatrice , un quiz chronométré et enfin ce portfolio.
+    </p>
+    
+   
+<h2 id="projet">Projets et réalisations</h2>
+    <p>
+        <ul> 
+              <h3>Titre :  Panneau publicitaire</h3>
+             <img class="carousel animate-img" src="carousel.png" alt="Carousel">
+             <li>Contexte : on devait créer un panneau qui faisait défiler des images des produits dont on voulait faire la promotion.</li>
+        
+             <li>Objectifs : Ce panneau devait faire défiler les images pour que les  produits soient plus attractifs avec de l'animation.</li>
+        
+              <li>Mon rôle : réaliser le Css du panneau.</li>
+        </ul>
+    </p>
+    <p>
+      <ul> 
+         <h3>Titre : Résolution d'une équation à 3 inconnus par méthode de Cramer</h3>
+         <img class="cramer animate-img" src="Cramer's-Rule.png" alt="Carousel">
+         <li>Contexte : créer ce projet où il y a plusieurs champs avec lesquels l'utilisateur pouvait entrer les nombres et il y a  présence d'un emplacement pour montrer les solutions de chaque inconnu.</li>
+
+         <li>Objectifs : Faciliter la résolution de ce genre d'équation en un temps plus court.</li>
+
+       </ul>
+    </p>
+
+
+    <p>
+        <ul>
+
+          <h3>Titre : Quiz chronométré</h3>
+          <img class="quiz animate-img"  src="quiz.jpg" alt="Quiz">
+        
+          <li>Contexte : un quiz avec plusieurs thèmes , il y a un chrono de 60s avant de commencer le jeu et le score final est affiché à la fin avec le diagramme en barre qui représente le résultat par chart js.</li> 
+
+          <li> Objectifs : enrichir les connaissances du joueur tout en s'amusant.</li>
+
+        </ul>
+    </p>
+
+
+  
+<h2 id="reflex">Réflexions personnelles</h2>
+    <p>J'ai appris que le self-discipline est extrêmement nécessaire pour réaliser les objectifs. La gestion du temps est une clé importante dans la réussite aussi ,  la motivation , l'entraide , la communication , la passion , l'optimisme et la prière sont également des élements indispensable dans le succès d'un projet et pour obtenir une productivité durable. </p> 
+    <p>
+        Ambitions futures :
+        J'espère pouvoir bâtir  plusieurs projets incroyables et explorer le monde pour m'enrichir en expériences et en connaissances.
+    </p>
+
+   
+<h2 id="docu">Documents annexes</h2>
+      <div class="div cv">
+        <ul>
+           <li>Nom et Prénoms : HANTANIRINA Miora Tatiana</li>
+           <li>Adresse : Tanambao</li>
+           <li>Téléphone : 034 24 646 69</li>
+           <li>Email : miorakokoly@gmail.com</li>
+           <li>Date de naissance : 02/07/2007</li>
+           <li>Nationalité : Malagasy</li>
+
+        </ul>
+
+        <h3>Objectif professionnel</h3>
+        <p> Explorer tout les recoins du monde professionnel , m'enrichir en connaissances et en expériences et avoir une carrière à s'en souvenir.</p>
+
+        <h3>Formation:</h3>
+      <p>
+           <ul>
+              <li>Formation JavaScript - Orange Digital Center , Fianarantsoa , Madagasikara </li>
+              <li>Année : 2025 (en cours)</li>
+          </ul>
+         
+           <ul>
+               <li>Formation informatique - Spray Info , Fianarantsoa , Madagasikara </li>
+               <li>Année : 2025</li>
+           </ul>
+
+          <ul>
+               <li>Formation anglais - Centre de formation professionnel , Toamasina, Madagasikara </li>
+               <li>Année : 2022</li>
+               <li>Mention : Bien</li>
+           </ul>
+
+       </p>
+
+        <h3>Compétences:</h3>
+        <p>
+            <ul>
+                <li>Informatique : Visual Studio Code , Code Blocks , GNS3 , Qt creator , Open Desk , commandes SQL , commandes PsExec , TeamViewer , VBA excel , Visual Studio</li>
+                <li>Langues : Français(courant) , anglais(courant)</li>
+                <li>Centres d’intérêt : lecture , danse , visionnage de documentaire , regarder des dessins animés</li>
+             </ul>   
+        </p>
+
+      </div>
+     
+      
+<h2 id="send">Send Message</h2>
+      <p>Vous pouvez m'envoyer un mail via ce formulaire ou m'envoyer un message directement vers mon compte Facebook ou Whatsapp , en bas de ce formulaire. </p>
+      <div>
+        <form action="https://formsubmit.co/miorakokoly@gmail.com" method="POST">
+  <label for="name">Nom :</label>
+  <input type="text" id="name" name="name" required>
+        <br>
+  <label for="email">Email :</label>
+  <input type="email" id="email" name="email" required>
+       <br>
+  <label for="message">Message :</label>
+  <textarea id="message" name="message" required></textarea>
+        <br>
+  <button type="submit">Envoyer</button>
+</form>
+
+        <!-- Redirection après envoi -->
+<input type="hidden" name="_next" value="https://ton-site.com/merci.html">
+
+<!-- Désactiver le captcha -->
+<input type="hidden" name="_captcha" value="false">
+
+<!-- Sujet du message -->
+<input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+
+      </div>
+
+      <div class="bottom-links">
+        <a href="https://m.me/Tatiana Chan" target="_blank" class="bottom-link fb-link">
+          <span class="icon-fb" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#1877f2"/>
+              <path d="M21.5 16.5h-3v9h-4v-9h-2v-3h2v-2c0-2.2 1.3-3.5 3.5-3.5h3v3h-2c-0.7 0-1 0.3-1 1v1.5h3l-0.5 3z" fill="#fff"/>
+            </svg>
+          </span>
+          Me contacter sur Facebook
+        </a>
+        <a href="https://wa.me/0342464669" target="_blank" class="bottom-link wa-link">
+          <span class="icon-wa" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#25d366"/>
+              <path d="M23.5 20.5c-0.3-0.2-1.7-0.8-2-0.9-0.3-0.1-0.5-0.2-0.7 0.2-0.2 0.3-0.8 0.9-1 1.1-0.2 0.2-0.4 0.2-0.7 0.1-0.3-0.2-1.3-0.5-2.5-1.6-0.9-0.8-1.5-1.8-1.7-2.1-0.2-0.3 0-0.5 0.1-0.7 0.1-0.1 0.2-0.3 0.3-0.4 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.2 0-0.4 0-0.6s-0.7-1.7-1-2.3c-0.2-0.5-0.5-0.4-0.7-0.4-0.2 0-0.4 0-0.6 0-0.2 0-0.5 0.1-0.7 0.3-0.2 0.2-0.7 0.7-0.7 1.7 0 1 0.7 2 0.8 2.1 0.1 0.1 1.4 2.2 3.4 3.1 2 0.9 2.4 0.7 2.8 0.7 0.4 0 1.4-0.6 1.6-1.2 0.2-0.6 0.2-1.1 0.1-1.2z" fill="#fff"/>
+            </svg>
+          </span>
+          M’envoyer un message sur WhatsApp
+        </a>
+      </div>
+
+      <script src="script.js"></script>
+
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width:100%; height:100px;">
+  <path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#00aaff">
+    <animate attributeName="d" dur="5s" repeatCount="indefinite"
+      values="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z;
+              M0,0 C400,50 800,150 1200,50 L1200,0 L0,0 Z;
+              M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z"/>
+  </path>
+</svg>
+
+</body>
+</html>
